@@ -2,14 +2,10 @@
 
 one:
   content: MyText
-  author: MyString
-  publish_date: 2014-05-31
-  book: 
-  user: 
+  book_id: 
+  user_id: 
 
 two:
   content: MyText
-  author: MyString
-  publish_date: 2014-05-31
-  book: 
-  user: 
+  book_id: 
+  user_id: 
