@@ -5,4 +5,7 @@ Cursoo::Application.routes.draw do
   		get :profile
   	end
   end
+
+  resources :books
+  
 end
