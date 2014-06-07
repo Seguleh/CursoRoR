@@ -21,7 +21,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= @book.comments.each do |comment| %>
+		<% @book.comments.each do |comment| %>
 			<tr>
 				<td><%= comment.user.complete_name %></td>
 				<td><%= comment.content %></td>
