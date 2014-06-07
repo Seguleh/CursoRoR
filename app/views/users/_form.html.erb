@@ -5,6 +5,17 @@
 	<%= f.input :password %>
 	<%= f.input :email %>
 	<%= f.input :birthday, as: :string %>
+	<h3>Profile Data:</h3>
+	<%= f.semantic_fields_for :profile do |h| %>
+		<%= h.input :phone %>
+		<%= h.input :country,  as: :string %>
+		<%= h.input :city %>
+		<%= h.input :zip_code %>
+		<%= h.input :line1 %>
+		<%= h.input :line2 %>
+		<%= h.input :url_gravatar %>
+	<% end %>
+	
 	<%= f.submit %>
 
 <% end %>
