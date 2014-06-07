@@ -1,7 +1,9 @@
-<p>Hai I'm a whore page, dirty filthy whore</p>
+<p>Hai, I'm a dirty filthy whore page</p>
+
+<h3> <%= flash[:notice] %></h3>
 
 <h1>Users</h1>
-<table class="table table-striped">
+<table border=1>
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -10,6 +12,7 @@
 			<th>Birthday</th>
 			<th>Created at</th>
 			<th>Updated at</th>
+			<th>Acciones</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,7 +24,10 @@
 				<td><%= user.birthday %></td>
 				<td><%= user.created_at %></td>
 				<td><%= user.updated_at %></td>
+				<td><%= link_to "Edit", edit_user_path(user) %></td>
 			</tr>
 		<% end %>
 	</tbody>
 </table>
+
+<%= link_to "Create User", new_user_path %>
