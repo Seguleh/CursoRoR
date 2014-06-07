@@ -40,6 +40,10 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def profile
+		@profile = User.find(params[:id]).profile
+	end
+
 	private
 
 	def permit_params

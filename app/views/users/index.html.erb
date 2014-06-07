@@ -27,6 +27,7 @@
 				<td>
 					<%= link_to "Edit", edit_user_path(user) %>
 					<%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Sure?"} %>
+					<%= link_to "Profile", profile_user_path(user) %>
 				</td>
 			</tr>
 		<% end %>
