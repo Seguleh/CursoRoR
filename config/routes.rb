@@ -6,6 +6,8 @@ Cursoo::Application.routes.draw do
   	end
   end
 
-  resources :books
+  resources :books do
+  	resources :comments
+  end
   
 end

@@ -1,0 +1,16 @@
+<h1>Book: <%= @book.title %></h1>
+<p>
+	<b>Author: </b>
+	<%= @book.author %>
+</p>
+<p>
+	<b>Publish Date: </b>
+	<%= @book.publish_date %>
+</p>
+<p>
+	<b>Page Count: </b>
+	<%= @book.page_count %>
+</p>
+</br>
+
+<%= link_to "Create Comment", new_book_comment_path(@book) %>
