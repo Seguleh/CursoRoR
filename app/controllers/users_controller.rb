@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	def index
-		@users = User.all
+		@users = User.order_lastname
 	end
 
 	def new
@@ -28,6 +28,14 @@ class UsersController < ApplicationController
 			redirect_to users_path
 		else
 			render 'edit'
+		end
+	end
+
+	def destroy
+		@user = User.find(params[:id])
+		if @user.destroy
+			flash[:notice] = "User successfully destroyed"
+			redirect_to users_path
 		end
 	end
 
