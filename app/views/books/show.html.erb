@@ -13,4 +13,21 @@
 </p>
 </br>
 
+<table border="1">
+	<thead>
+		<tr>
+			<th>User</td>
+			<th>Comment</td>
+		</tr>
+	</thead>
+	<tbody>
+		<%= @book.comments.each do |comment| %>
+			<tr>
+				<td><%= comment.user.complete_name %></td>
+				<td><%= comment.content %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
 <%= link_to "Create Comment", new_book_comment_path(@book) %>
