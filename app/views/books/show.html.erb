@@ -1,4 +1,11 @@
+<h3> <%= flash[:notice] %></h3>
+
 <h1>Book: <%= @book.title %></h1>
+
+<% unless @read %>
+	<%= link_to "Read", read_book_path, method: :patch %>
+<% end  %>
+
 <p>
 	<b>Author: </b>
 	<%= @book.author %>
@@ -30,4 +37,10 @@
 	</tbody>
 </table>
 
+<h3>Read by: </h3>
+<% @book.users.each do |user| %>
+	<b><%= user.complete_name %></b>
+<% end %>
+</br>
+</br>
 <%= link_to "Create Comment", new_book_comment_path(@book) %>

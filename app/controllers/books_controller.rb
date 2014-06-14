@@ -8,7 +8,18 @@ class BooksController < ApplicationController
 	end
 
 	def show
+
 		@book = Book.find(params[:id])
+
+		@read = @book.read_by_user?(current_user)
+	end
+
+	def read
+		book = Book.find(params[:id])
+
+		book.users << current_user
+
+		redirect_to book_path(book), notice: "You read this book...whore"
 	end
 
 	def create

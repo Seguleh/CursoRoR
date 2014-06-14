@@ -6,8 +6,14 @@ Cursoo::Application.routes.draw do
   	end
   end
 
+  resources :session
+
   resources :books do
+    member do
+      patch :read
+    end
   	resources :comments
   end
-  
+
+  root 'books#index'
 end
