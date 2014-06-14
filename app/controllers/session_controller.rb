@@ -1,5 +1,7 @@
 class SessionController < ApplicationController
 
+	skip_before_action :auth!
+
 	def new
 	end
 
@@ -13,5 +15,11 @@ class SessionController < ApplicationController
 			flash[:notice] = "Invalid email or password"
 			render "new"
 		end
+	end
+
+	def destroy
+		session[:user] = nil
+
+		redirect_to new_session_path
 	end
 end
