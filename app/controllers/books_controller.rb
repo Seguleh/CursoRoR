@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+
+	before_action :read?, only: :read
+
 	def index
 		@books = Book.order_title
 	end
@@ -57,5 +60,15 @@ class BooksController < ApplicationController
 
 	def permit_params
 		params.require(:book).permit!
+	end
+
+	def read?
+
+		book = Book.find(params[:id])
+
+		if book.read_by_user?(current_user)
+			redirect_to book_path(book), notice: "You already read that book motherfucker piece of shit abuser"
+		end
+
 	end
 end
