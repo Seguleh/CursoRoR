@@ -1,1 +1,1 @@
-pegasozh@hotmail.com
+otmail.com
